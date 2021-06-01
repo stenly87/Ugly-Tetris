@@ -9,7 +9,7 @@ namespace Tetris
 {
     public class Line : Figure
     {
-        public Line()
+        public Line(IBrushRandomizer brushRandomizer)
         {
             Width = 100;
             Height = 25;
@@ -17,7 +17,7 @@ namespace Tetris
             { 
                 Width = 100, 
                 Height = 25,
-                Fill = Brushes.Red,
+                Fill = brushRandomizer.GetRandomBrush(),
             };
 
             line = new LineGeometry

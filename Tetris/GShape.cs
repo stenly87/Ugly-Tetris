@@ -1,37 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using System.Windows;
-using System.Windows.Media;
 using System.Windows.Shapes;
-
+using System.Windows.Media;
+using System.Windows;
 namespace Tetris
 {
-    public class Triangle : Figure
+    public class GShape : Figure
     {
-        public Triangle(IBrushRandomizer brushRandomizer)
+        public GShape(IBrushRandomizer brushRandomizer)
         {
             shape = new Polygon { Points = new PointCollection(new Point[] { 
                 new Point(0, 25),
                 new Point(0, 50),
                 new Point(75, 50),
-                new Point(75, 25),
-                new Point(50, 25),
+                new Point(75, 0),
                 new Point(50, 0),
-                new Point(25, 0),
-                new Point(25, 25)
-            }), Fill = brushRandomizer.GetRandomBrush(), Width =75, Height=50 };
+                new Point(50, 25)
+            }),
+                Width = 75, Height = 50, Fill = brushRandomizer.GetRandomBrush()
+            };
 
-            line = new GeometryGroup { Children = new GeometryCollection(new[] { 
-                new LineGeometry(new Point(15,40), new Point(60, 40)),
-                new LineGeometry(new Point(60,40), new Point(35, 40)),
-                new LineGeometry(new Point(35,40), new Point(35, 15))
-            }) };
-
-            Width = 75;
-            Height = 50;
+            line = new GeometryGroup
+            {
+                Children = new GeometryCollection(new[] {
+                new LineGeometry(new Point(15,45), new Point(65, 45)),
+                new LineGeometry(new Point(65,45), new Point(65,15))
+            })
+            };
         }
-
         public override int AngleCheckX()
         {
             if (Angle == 180)

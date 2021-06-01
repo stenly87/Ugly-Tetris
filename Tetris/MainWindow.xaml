@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tetris"
         mc:Ignorable="d"
-        Title="MainWindow" SizeToContent="WidthAndHeight" KeyUp="keyUpMethod">
+        Title="MainWindow" SizeToContent="WidthAndHeight" KeyUp="keyUpMethod" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Canvas x:Name="mainCanvas" Width="300" Height="500" Background="Linen" Grid.ColumnSpan="2" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBlock Text="{Binding Scores, StringFormat=Кол-во очков: {0}}" HorizontalAlignment="Center" Background="Linen" FontSize="15" Padding="5"/>
+        <Canvas x:Name="mainCanvas" Grid.Row="1" Background="Linen" Margin="5"/>
     </Grid>
 </Window>
