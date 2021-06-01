@@ -9,10 +9,8 @@ namespace Tetris
 {
     public class Triangle : Figure
     {
-        public Triangle()
-        {
-            shape = new Polygon { Points = new PointCollection(new Point[] { 
-                new Point(0, 25),
+        public Triangle(): base(75, 50, new PointCollection(new Point[] {
+            new Point(0, 25),
                 new Point(0, 50),
                 new Point(75, 50),
                 new Point(75, 25),
@@ -20,16 +18,13 @@ namespace Tetris
                 new Point(50, 0),
                 new Point(25, 0),
                 new Point(25, 25)
-            }), Width =75, Height=50 };
-
+        }))
+        {
             line = new GeometryGroup { Children = new GeometryCollection(new[] { 
                 new LineGeometry(new Point(15,40), new Point(60, 40)),
                 new LineGeometry(new Point(60,40), new Point(35, 40)),
                 new LineGeometry(new Point(35,40), new Point(35, 15))
             }) };
-
-            Width = 75;
-            Height = 50;
         }
 
         public override int AngleCheckX()

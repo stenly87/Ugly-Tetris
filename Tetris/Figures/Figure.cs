@@ -7,6 +7,18 @@ namespace Tetris
 {
     public abstract class Figure 
     {
+        public Figure(int Width, int Height, PointCollection baseGeometryPoints)
+        {
+            this.Width = Width;
+            this.Height = Height;
+            BaseGeometryPoints = baseGeometryPoints;
+
+            shape = new Polygon { 
+                Points = baseGeometryPoints, 
+                Width = Width, 
+                Height = Height };
+        }
+        public PointCollection BaseGeometryPoints { get; set; }
         public CustomPoint CanvasPoint { get; set; } = new CustomPoint();
 
         protected Geometry line;

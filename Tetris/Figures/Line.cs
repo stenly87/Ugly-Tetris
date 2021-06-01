@@ -9,16 +9,13 @@ namespace Tetris
 {
     public class Line : Figure
     {
-        public Line()
+        public Line(): base(100,25, new PointCollection (new Point[] { 
+            new Point(0, 0),
+            new Point(0, 25),
+            new Point(100, 25),
+            new Point(100, 0)
+        }))
         {
-            Width = 100;
-            Height = 25;
-            shape = new Rectangle 
-            { 
-                Width = 100, 
-                Height = 25
-            };
-
             line = new LineGeometry
             {
                 StartPoint = new Point(10, 10),

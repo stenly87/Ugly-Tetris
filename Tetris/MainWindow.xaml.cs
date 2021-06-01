@@ -17,7 +17,7 @@ namespace Tetris
             game = new Game(mainCanvas, 200, 400, 
                 new SoundWorker(), 
                 new FigureGenerator(
-                    new BrushRandomizer()));
+                    new BrushRandomizer(), showNextFigureCanvas));
             DataContext = new GameVM(game);
         }
         private void keyUpMethod(object sender, KeyEventArgs e)

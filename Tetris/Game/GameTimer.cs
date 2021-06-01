@@ -32,6 +32,7 @@ namespace Tetris
         {
             if (interval > 100)
                 interval -= 10;
+            SetGameSpeed(interval);
         }
 
         internal void Play()

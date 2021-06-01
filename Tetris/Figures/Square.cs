@@ -9,9 +9,13 @@ namespace Tetris
 {
     public class Square : Figure
     {
-        public Square()
+        public Square(): base(50,50, new PointCollection(new Point[] {
+            new Point(0, 0),
+            new Point(0, 50),
+            new Point(50, 50),
+            new Point(50, 0)
+        }))
         {
-            shape = new Rectangle {Width = 50, Height= 50};
             line = new GeometryGroup
             {
                 Children = new GeometryCollection(new[] {

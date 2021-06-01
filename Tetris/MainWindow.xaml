@@ -7,11 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" SizeToContent="WidthAndHeight" KeyUp="keyUpMethod" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition />
-        </Grid.RowDefinitions>
-        <TextBlock Text="{Binding Scores, StringFormat=Кол-во очков: {0}}" HorizontalAlignment="Center" Background="Linen" FontSize="15" Padding="5"/>
-        <Canvas x:Name="mainCanvas" Grid.Row="1" Background="Linen" Margin="5"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Canvas x:Name="mainCanvas" Background="Linen" Margin="5"/>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <TextBlock Margin="5" Text="{Binding Scores, StringFormat=Кол-во очков: {0}}" HorizontalAlignment="Center" Background="Linen" FontSize="15" Padding="5"/>
+            <TextBlock Grid.Row="1" Margin="5" Text="Следующая фигура:" HorizontalAlignment="Center" Background="Linen" FontSize="15" Padding="5"/>
+            <Canvas Grid.Row="2" x:Name="showNextFigureCanvas" />
+        </Grid>
+        
     </Grid>
 </Window>

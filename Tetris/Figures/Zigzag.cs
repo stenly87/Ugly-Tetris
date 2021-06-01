@@ -9,12 +9,8 @@ namespace Tetris
 {
     public class Zigzag : Figure
     {
-        public Zigzag()
-        {
-            shape = new Polygon
-            {
-                Points = new PointCollection(new Point[] {
-                new Point(0, 0),
+        public Zigzag() : base(75, 50, new PointCollection(new Point[] {
+            new Point(0, 0),
                 new Point(0, 25),
                 new Point(25, 25),
                 new Point(25, 50),
@@ -22,10 +18,8 @@ namespace Tetris
                 new Point(75, 25),
                 new Point(50, 25),
                 new Point(50, 0)
-            }),
-                Width = 75,
-                Height = 50
-            };
+        }))
+        {
             line = new GeometryGroup
             {
                 Children = new GeometryCollection(new[] {
