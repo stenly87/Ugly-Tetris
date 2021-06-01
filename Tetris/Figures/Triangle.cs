@@ -9,7 +9,7 @@ namespace Tetris
 {
     public class Triangle : Figure
     {
-        public Triangle(IBrushRandomizer brushRandomizer)
+        public Triangle()
         {
             shape = new Polygon { Points = new PointCollection(new Point[] { 
                 new Point(0, 25),
@@ -20,7 +20,7 @@ namespace Tetris
                 new Point(50, 0),
                 new Point(25, 0),
                 new Point(25, 25)
-            }), Fill = brushRandomizer.GetRandomBrush(), Width =75, Height=50 };
+            }), Width =75, Height=50 };
 
             line = new GeometryGroup { Children = new GeometryCollection(new[] { 
                 new LineGeometry(new Point(15,40), new Point(60, 40)),

@@ -9,7 +9,7 @@ namespace Tetris
 {
     public class Zigzag : Figure
     {
-        public Zigzag(IBrushRandomizer brushRandomizer)
+        public Zigzag()
         {
             shape = new Polygon
             {
@@ -23,7 +23,6 @@ namespace Tetris
                 new Point(50, 25),
                 new Point(50, 0)
             }),
-                Fill = brushRandomizer.GetRandomBrush(),
                 Width = 75,
                 Height = 50
             };

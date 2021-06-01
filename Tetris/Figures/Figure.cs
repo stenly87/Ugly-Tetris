@@ -10,6 +10,8 @@ namespace Tetris
         public CustomPoint CanvasPoint { get; set; } = new CustomPoint();
 
         protected Geometry line;
+
+        public Brush Fill { get => shape.Fill; set => shape.Fill = value; }
         public Geometry IntersectLine { get => line; }
         protected Shape shape;
         public Shape Shape { get => shape; }

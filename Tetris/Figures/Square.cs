@@ -9,9 +9,9 @@ namespace Tetris
 {
     public class Square : Figure
     {
-        public Square(IBrushRandomizer brushRandomizer)
+        public Square()
         {
-            shape = new Rectangle {Width = 50, Height= 50, Fill = brushRandomizer.GetRandomBrush()};
+            shape = new Rectangle {Width = 50, Height= 50};
             line = new GeometryGroup
             {
                 Children = new GeometryCollection(new[] {

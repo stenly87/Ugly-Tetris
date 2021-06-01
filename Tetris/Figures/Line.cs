@@ -9,15 +9,14 @@ namespace Tetris
 {
     public class Line : Figure
     {
-        public Line(IBrushRandomizer brushRandomizer)
+        public Line()
         {
             Width = 100;
             Height = 25;
             shape = new Rectangle 
             { 
                 Width = 100, 
-                Height = 25,
-                Fill = brushRandomizer.GetRandomBrush(),
+                Height = 25
             };
 
             line = new LineGeometry

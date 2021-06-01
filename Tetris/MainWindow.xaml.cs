@@ -14,8 +14,11 @@ namespace Tetris
         public MainWindow()
         {
             InitializeComponent();
-            game = new Game(mainCanvas, 500, 500);
-            DataContext = game;
+            game = new Game(mainCanvas, 200, 400, 
+                new SoundWorker(), 
+                new FigureGenerator(
+                    new BrushRandomizer()));
+            DataContext = new GameVM(game);
         }
         private void keyUpMethod(object sender, KeyEventArgs e)
         {

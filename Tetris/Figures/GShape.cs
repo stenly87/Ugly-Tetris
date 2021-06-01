@@ -8,7 +8,7 @@ namespace Tetris
 {
     public class GShape : Figure
     {
-        public GShape(IBrushRandomizer brushRandomizer)
+        public GShape()
         {
             shape = new Polygon { Points = new PointCollection(new Point[] { 
                 new Point(0, 25),
@@ -18,7 +18,7 @@ namespace Tetris
                 new Point(50, 0),
                 new Point(50, 25)
             }),
-                Width = 75, Height = 50, Fill = brushRandomizer.GetRandomBrush()
+                Width = 75, Height = 50
             };
 
             line = new GeometryGroup
